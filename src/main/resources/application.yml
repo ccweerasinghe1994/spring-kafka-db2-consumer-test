@@ -1,0 +1,48 @@
+# This is the main configuration file for a Spring Boot application.
+spring:
+  # The name of the application.
+  application:
+    name: spring-kafka-db2-consumer-test
+  # Configuration for the data source.
+  datasource:
+    # The fully qualified name of the JDBC driver class.
+    driver-class-name: com.ibm.db2.jcc.DB2Driver
+    # Configuration for HikariCP, a lightweight and fast JDBC connection pool.
+    hikari:
+      # The JDBC URL for the database.
+      jdbc-url: jdbc:db2://127.0.0.1:50000/testdb
+      # The username for the database.
+      username: db2inst1
+      # The password for the database.
+      password: password
+    # The JDBC URL for the database. This is typically the same as the jdbc-url in the HikariCP configuration.
+    url: jdbc:db2://127.0.0.1:50000/testdb
+  # Configuration for JPA (Java Persistence API).
+  jpa:
+    # Whether to show the SQL queries that Hibernate is executing in the logs.
+    show-sql: true
+    # Configuration for Hibernate.
+    hibernate:
+      # Whether to automatically apply changes to the database schema.
+      ddl-auto: create-drop
+  kafka:
+    bootstrap-servers: pkc-p11xm.us-east-1.aws.confluent.cloud:9092
+    security:
+      protocol: SASL_SSL
+    properties:
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="XVNJ3B6CIUTNXJRI" password="LWDYZKKWN5ZcUrNan3RG2OrM+UUj/P3VJRA09WCa5ROP5RrIwQjNsM0BLzplJ5rp";
+    consumer:
+      group-id: spring-kafka-db2-consumer-test-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  sql:
+    init:
+      mode: always
+
+
+
+
+

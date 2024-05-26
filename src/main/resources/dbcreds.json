@@ -1,0 +1,33 @@
+{
+  "056": {
+    "db_url": "jdbc:as400://AS611c.na.sysco.net",
+    "user_id": "ABC",
+    "max_cons": "30",
+    "password": "ABC"
+  },
+  "101": {
+    "db_url": "jdbc:as400://AS611c.na.sysco.net",
+    "user_id": "ABC",
+    "max_cons": "30",
+    "password": "ABC"
+  },
+  "048": {
+    "db_url": "jdbc:as400://AS611c.na.sysco.net",
+    "user_id": "ABC",
+    "max_cons": "30",
+    "password": "ABC"
+  },
+  "137": {
+    "db_url": "jdbc:as400://AS611c.na.sysco.net",
+    "user_id": "ABC",
+    "max_cons": "30",
+    "password": "ABC"
+  },
+  "163": {
+  "db_url": "jdbc:as400://AS611c.na.sysco.net",
+  "user_id": "ABC",
+  "max_cons": "30",
+  "password": "ABC"
+}
+}
+

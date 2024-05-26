@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  db2server:
+    image: icr.io/db2_community/db2
+    container_name: db2server
+    hostname: db2server
+    ports:
+      - "50000:50000"
+    privileged: true
+    restart: always
+    env_file:
+      - db2.env
+    volumes:
+      - C:/Users/USER/Docker:/database
+
